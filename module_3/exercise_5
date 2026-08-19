@@ -1,0 +1,5 @@
+print ("Enter the weight using medieval units:")
+talents = float(input("Talents: "))
+pounds = float(input("Pounds: "))
+lots = float(input("Lots: "))
+total_weight_in_grams = talents*20*32*13.3 + pounds*32*13.3 + lots*13.3
