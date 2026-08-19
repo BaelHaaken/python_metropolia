@@ -1,2 +1,2 @@
-# Module 1 & 2 - Exercise 1
-print("Hello, Bael!")
+name = input("Enter your name:")
+print(f"Hello, {name}!")
