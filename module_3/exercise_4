@@ -1,9 +1,9 @@
-int_1 = int(input("Enter the first integer: "))
-int_2 = int(input("Enter the second integer: "))
-int_3 = int(input("Enter the third integer: "))
-sum_of_integers = int_1 + int_2 + int_3 
-product_of_integers = int_1 * int_2 * int_3
-average_of_integers = sum_of_integers / 3
-print(f"The sum of the three integers is: {sum_of_integers}")
-print(f"The product of the three integers is: {product_of_integers}")
-print(f"The average of the three integers is: {average_of_integers}")
+num1 = int(input("Enter the first integer: "))
+num2 = int(input("Enter the second integer: "))
+num3 = int(input("Enter the third integer: "))
+sum_of_numbers = num1 + num2 + num3 
+product_of_numbers = num1 * num2 * num3
+average_of_numbers = sum_of_numbers / 3
+print(f"The sum of the numbers: {sum_of_numbers}")
+print(f"The product of the numbers: {product_of_numbers}")
+print(f"The average of the numbers: {average_of_numbers}")

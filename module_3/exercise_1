@@ -1,2 +1,5 @@
-name = input("Enter your name:")
-print(f"Hello, {name}!")
+name = input("Give name: ")
+
+greeting = "Hello, " + name + "!"
+
+print(greeting)
