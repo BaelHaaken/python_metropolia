@@ -8,7 +8,7 @@ elif cabin_class == "B":
 elif cabin_class == "C":
     print("The cabin class is C: windowless cabin below the car deck.")
 elif cabin_class == "lux":
-    print("The cabin class is LUX: upper-deck cabin with a balcony..")
+    print("The cabin class is LUX: upper-deck cabin with a balcony.")
 elif cabin_class == "a":
     print("The cabin class is A: above the car deck, equipped with a window.")
 elif cabin_class == "b":
