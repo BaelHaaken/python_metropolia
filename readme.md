@@ -18,3 +18,13 @@ I completed exercise 1 , 2 , 3 , 4 , 5 , 6
 I completed exercise 1 , 2 , 3 and 4 
 
 ## Module 7
+I completed exercise 1 , 2 , 3 , 4 and 5
+
+## Module 8
+I completed exercise 1 , 2 and 3
+ 
+## Module 9
+I completed exercise 1 , 2 , 3 and 4 
+
+## Module 10
+I completed exercise 1 , 2 , 3 and 4 
