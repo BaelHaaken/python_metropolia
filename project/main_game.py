@@ -1,5 +1,3 @@
-
-
 from player import Player
 from room import Room
 from item import Item
