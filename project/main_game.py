@@ -19,17 +19,87 @@ dragon_room = Room("Dragon Room", dragon_egg)
 armory = Room("Armory", sword)
 treasury = Room("Royal Treasury", gold)
 
+rooms = {
+    "King's Landing Entrance": entrance,
+    "Throne Room": throne_room,
+    "Dragon Room": dragon_room,
+    "Armory": armory,
+    "Royal Treasury": treasury
+}
 
-with open("intro.txt", "r") as file:
-    print(file.read())
+all_items = {
+    "Valyrian Steel Sword": sword,
+    "Dragon Egg": dragon_egg,
+    "King's Crown": crown,
+    "Bag of Gold": gold
+}
 
-with open("instructions.txt", "r") as file:
-    print(file.read())
+#with open("intro.txt", "r") as file:
+#    print(file.read())
 
+#with open("instructions.txt", "r") as file:
+#    print(file.read())
 
+def save_game(player):
+    with open("save.txt", "w") as file:
+        file.write(player.name + "\n")
+        file.write(str(player.age) + "\n")
+        file.write(player.location.name + "\n")
+
+        inventory = "|".join(item.name for item in player.items)
+        file.write(inventory + "\n")
+
+    
+        for room in rooms.values():
+            if room.item is not None:
+                file.write(room.item.name + "\n")
+            else:
+                file.write("-\n")
 
 player_name = input("Enter your name: ")
-player_age = int(input("Enter your age: "))
+
+def load_game(player_name):
+    try:
+        with open("save.txt", "r") as file:
+            lines = [line.strip() for line in file.readlines()]
+
+        if lines[0].lower() != player_name.lower():
+            return None
+
+        return lines
+
+    except FileNotFoundError:
+        return None
+    
+saved_data = load_game(player_name)
+
+if saved_data is not None:
+    choice = input("Saved game found! Continue? (yes/no): ")
+
+    if choice.lower() == "yes":
+        player_age = int(saved_data[1])
+        start_room = rooms[saved_data[2]]
+
+        player = Player(player_name, player_age, start_room)
+
+        
+        if saved_data[3]:
+            for item_name in saved_data[3].split("|"):
+                player.items.append(all_items[item_name])
+
+        
+        for room, item_name in zip(rooms.values(), saved_data[4:9]):
+            room.item = all_items[item_name] if item_name != "-" else None
+
+        print("Your game has been restored!")
+
+    else:
+        player_age = int(input("Enter your age: "))
+        player = Player(player_name, player_age, entrance)
+
+else:
+    player_age = int(input("Enter your age: "))
+    player = Player(player_name, player_age, entrance)
 
 
 
@@ -175,9 +245,17 @@ else:
 
 
         elif player_command == "9" or player_command.lower() == "lopeta":
+            save_game(player)
+            print("Game saved!")
             print("Goodbye!")
             break
 
 
         else:
             print("Invalid command.")
+
+
+
+
+
+
