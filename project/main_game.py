@@ -20,6 +20,13 @@ armory = Room("Armory", sword)
 treasury = Room("Royal Treasury", gold)
 
 
+with open("intro.txt", "r") as file:
+    print(file.read())
+
+with open("instructions.txt", "r") as file:
+    print(file.read())
+
+
 
 player_name = input("Enter your name: ")
 player_age = int(input("Enter your age: "))

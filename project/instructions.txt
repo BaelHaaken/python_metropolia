@@ -1,0 +1,10 @@
+MAIN MENU
+
+1. Show location
+2. Move to another room
+3. Collect an item
+4. Show inventory
+5. Clear inventory
+9. Quit the game
+
+Enter the number of your chosen command.
